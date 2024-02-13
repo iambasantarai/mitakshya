@@ -2,16 +2,22 @@
 <html lang="en">
   <head>
     <title>mitakshya</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link href="css/style.css" rel="stylesheet" />
     <link rel="shortcut icon" href="./assets/favicon.ico" />
+
+    <!-- sound font player cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/soundfont-player@0.12.0/dist/soundfont-player.min.js"></script>
+    <script defer src="js/script.js"></script>
   </head>
   <body>
     <div class="container">
       <svg
-        width="120"
-        height="120"
+        width="48"
+        height="48"
         viewBox="0 0 120 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -143,5 +149,7 @@
         </defs>
       </svg>
     </div>
+
+    <canvas id="paper"></canvas>
   </body>
 </html>
