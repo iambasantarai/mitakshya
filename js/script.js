@@ -73,13 +73,22 @@ const playNote = (note) => {
   });
 };
 
+const sound = document.getElementById("sound-toggler");
+
 const handleSoundToggle = (enabled = !settings.soundEnabled) => {
   settings.soundEnabled = enabled;
 };
 
 document.onvisibilitychange = () => handleSoundToggle(false);
 
-paper.onclick = () => handleSoundToggle();
+paper.onclick = () => {
+  handleSoundToggle();
+
+  // toggle sound guide
+  const soundGuide = document.getElementById("sound-guide");
+  const toggled = settings.soundEnabled ? "true" : "false";
+  soundGuide.dataset.toggled = toggled;
+};
 
 let arcs = [];
 

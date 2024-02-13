@@ -24,3 +24,37 @@ canvas {
   width: 100vw;
   position: relative;
 }
+
+#sound-guide {
+  position: fixed;
+  top: 43.5%;
+  left: 50%;
+  z-index: 2;
+  padding: 0.75rem;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 5%);
+  border-radius: 0.4rem;
+  transition: opacity 1000ms;
+  pointer-events: none;
+}
+
+#sound-guide::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgb(255 255 255 / 5%) transparent transparent transparent;
+}
+
+#sound-guide[data-toggled="true"] {
+  opacity: 0;
+}
+
+#sound-guide > p {
+  color: white;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
