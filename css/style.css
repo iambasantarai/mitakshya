@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #0a0f19;
+}
+
 .container {
   position: absolute;
   top: 50%;
