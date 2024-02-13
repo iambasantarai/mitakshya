@@ -57,23 +57,37 @@ const settings = {
   pulseEnabled: true,
 };
 
-const fatBoySF = {
-  url: "https://gleitz.github.io/midi-js-soundfonts/FatBoy/kalimba-mp3.js",
-  sourceUrl: "https://gleitz.github.io/midi-js-soundfonts/",
-  gain: 6,
+const SoundFonts = {
+  fatBoy: {
+    url: "https://gleitz.github.io/midi-js-soundfonts/FatBoy/kalimba-mp3.js",
+    sourceUrl: "https://gleitz.github.io/midi-js-soundfonts/",
+    gain: 6,
+  },
+
+  Keylimba: {
+    url: "https://www.basantarai.com.np/mitakshya/soundfonts/kalimba.mp3.js",
+    sourceUrl: "https://keylimba.carrd.co/",
+    gain: 1,
+  },
 };
 
-const KalimbaSF = Soundfont.instrument(new AudioContext(), fatBoySF.url, {
-  gain: fatBoySF.gain,
-});
+const selectedSoundFont = SoundFonts.Keylimba.url
+  ? SoundFonts.Keylimba
+  : SoundFonts.fatBoy;
+
+const KalimbaInstrument = Soundfont.instrument(
+  new AudioContext(),
+  selectedSoundFont.url,
+  {
+    gain: selectedSoundFont.gain,
+  },
+);
 
 const playNote = (note) => {
-  KalimbaSF.then(function (kalimba) {
+  KalimbaInstrument.then((kalimba) => {
     kalimba.play(note);
   });
 };
-
-const sound = document.getElementById("sound-toggler");
 
 const handleSoundToggle = (enabled = !settings.soundEnabled) => {
   settings.soundEnabled = enabled;
