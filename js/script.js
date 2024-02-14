@@ -71,9 +71,9 @@ const SoundFonts = {
   },
 };
 
-const selectedSoundFont = SoundFonts.fatBoy;
-// ? SoundFonts.Keylimba
-// : SoundFonts.fatBoy;
+const selectedSoundFont = SoundFonts.Keylimba.url
+  ? SoundFonts.Keylimba
+  : SoundFonts.fatBoy;
 
 const KalimbaInstrument = Soundfont.instrument(
   new AudioContext(),
