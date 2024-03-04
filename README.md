@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="csitGPT" src="./assets/cute-eye.png">
+    <img alt="Cute Eye" src="./assets/cute-eye.png">
 </p>
 <h1 align="center">Mitakshya</h1>
 
