@@ -51,7 +51,7 @@ const pen = paper.getContext("2d");
 
 const settings = {
   startTime: new Date().getTime(),
-  duration: 420,
+  duration: 2700,
   maxCycles: Math.max(colors.length, 100),
   soundEnabled: false,
   pulseEnabled: true,
